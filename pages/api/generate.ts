@@ -1,9 +1,10 @@
 // pages/api/generate.ts
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { openai } from '@/lib/openai'
-import { supabase } from '@/lib/supabase'
+import { getSupabase } from '@/lib/supabase'
 
 const debug = process.env.DEBUG === 'TRUE'
+const supabase = getSupabase();
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') return res.status(405).end('Method Not Allowed')
