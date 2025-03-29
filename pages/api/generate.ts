@@ -41,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     ]);
 
     return res.status(200).json({ images: imageUrls })
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('OpenAI error:', err)
     return res.status(500).json({ error: 'Failed to generate image' })
   }

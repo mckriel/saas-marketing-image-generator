@@ -1,6 +1,7 @@
 // app/upload/page.tsx
 'use client'
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function UploadPage() {
   const [file, setFile] = useState<File | null>(null)
@@ -86,13 +87,13 @@ export default function UploadPage() {
         </div>
       )}
 
-      {selectedPrompt && <p className="mt-6 italic">Generating image for: "{selectedPrompt}"</p>}
+      {selectedPrompt && <p className="mt-6 italic">Generating image for: &quot;{selectedPrompt}&quot;</p>}
 
       {generatedImages.length > 0 && (
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {generatedImages.map((url, idx) => (
             <div key={idx} className="border rounded p-2">
-            <img src={url} alt={`Generated ${idx}`} className="w-full rounded mb-2" />
+            <Image src={url} alt={`Generated ${idx}`} className="w-full rounded mb-2" />
             <button
               onClick={() => handleDownload(url, `promo-image-${idx + 1}.png`)}
               className="block w-full text-center px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
