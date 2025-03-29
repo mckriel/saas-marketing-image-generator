@@ -3,7 +3,6 @@ import { IncomingForm, Fields, Files } from 'formidable'
 import fs from 'fs'
 import { openai } from '@/lib/openai'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import path from 'path'
 import { getSupabase } from '@/lib/supabase'
 
 const debug = process.env.DEBUG === 'TRUE'
