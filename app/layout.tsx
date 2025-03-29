@@ -1,6 +1,4 @@
-// app/upload/page.tsx
-'use client'
-import { useState } from 'react'
+// app/layout.tsx
 
 export default function Page() {
 
