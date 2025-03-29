@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).end('Method Not Allowed')
   }
 
-  const tmpDir = path.join(process.cwd(), 'tmp')
+  const tmpDir = '/tmp'
   if (!fs.existsSync(tmpDir)) {
     fs.mkdirSync(tmpDir)
   }
